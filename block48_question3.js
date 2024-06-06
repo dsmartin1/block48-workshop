@@ -10,3 +10,16 @@ Input: heights = [1,1,4,2,1,3]
 Output: 3
 */
 
+const heightChecker = (heights) => {
+    let ascHeights = [...heights];
+    let count = 0;
+    ascHeights.sort((a, b) => a - b);
+    for (let i = 0; i < heights.length; i++) {
+        if (heights[i] != ascHeights[i]) {
+            count++;
+        }
+    }
+    return count;
+};
+
+console.log(heightChecker([1,1,4,2,1,3])); // expect 3
